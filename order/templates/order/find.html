@@ -1,0 +1,47 @@
+{%  extends 'order/newdashboard.html' %}
+{% load static %}
+<head>
+	{% block extrahead %}
+	<link rel="stylesheet" href="{% static 'css/find.css' %}">
+	{% endblock %}
+</head>
+
+{% block content %}
+<body>
+  <div id="newheader" class="card-head style-primary">
+    Add Order
+ 
+      <form action="" method="GET">
+        <input type="text"  name="q" ><button type="submit">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+      </form>
+    </div>
+   
+    {% for seen in seens %}
+
+	<p> {{seen.customer_name}}</p>
+	<p> {{seen.phone}}</p>
+	<p> {{seen.address}}</p>
+	<p> {{seen.product_name}}</p>
+	<p> {{seen.status}}</p>
+	<p> {{seen.payment_option}}</p>
+
+    {% empty %}
+
+      <p> no search </p>
+    {% endfor %}
+
+ </body>
+ {% endblock %}
+<!--
+ <div class="search-box">
+   <input class="search-txt"
+
+ </div>
+ 
+    <button type="submit">search</button>
+ 
+-->
+
+

@@ -1,0 +1,82 @@
+{%  extends 'order/newdashboard.html' %}
+{% load static %}
+
+<head>
+	{% block extrahead %}
+	<link rel="stylesheet" href="{% static 'css/account.css' %}">
+	{% endblock %}
+</head>
+
+{% block content %}
+
+<div id="newheader" class="card-head style-primary">
+	<header>Account Settings</header>
+</div>
+<br>
+<!--<h3 style="text-align: center; font-size: 25px" >Account Settings</h3>  -->
+<div class="row">
+	<div class="col-md-3">
+		<div class="card card-body">
+			<!--<a class="btn btn-warning" href="{% url 'home' %}"> &#8592; Back to Home</a> -->				
+			<img class="profile-pic" src="{{user.profile.image.url}}"  >
+		</div>
+	</div>
+	<div class="col-md-9">
+		<div class="card card-body">
+			<form method="POST" action="" enctype="multipart/form-data">
+				{% csrf_token %}
+			<div class="form-group row">
+				<label class="col-sm-2 ">Username</label>
+				<div class="col-sm-10">
+					{{ u_form.username }}
+				</div>
+			</div>
+			<div class="form-group row">
+				<label  class="col-sm-2 ">Email</label>
+				<div class="col-sm-10">
+					{{ u_form.email }}
+				</div>
+			</div>
+			<div class="form-group row">
+				<label  class="col-sm-2 ">Name</label>
+				<div class="col-sm-10">
+					{{ p_form.name }}
+				</div>
+			</div>
+			<div class="form-group row">
+				<label  class="col-sm-2 ">Image</label>
+				<div class="col-sm-10">
+					{{ p_form.image }}
+				</div>
+			</div>
+			<br>
+			<div class="form-group row">
+				<div class="col-sm-2 ">
+					<button type="submit" class="btn btn-primary">Update</button>
+				</div>
+			</div>
+		</form>
+			<!--
+			<form method="POST" action="" enctype="multipart/form-data">
+				{% csrf_token %}
+				{% for field in u_form %}
+					{{field.label}}
+					{{field}}
+					<br/>
+					<br>
+				{% endfor %}
+				
+				
+				{{p_form.as_p}}
+		
+			<input class="btn btn-primary" type="submit" value="Update Information">
+			</form>
+			<br>
+			<a href="{% url 'changepassword' %}" class="btn btn-secondary">Change Password</a>
+			-->
+		</div>
+	</div>
+</div>
+
+{% endblock %}
+	

@@ -1,0 +1,67 @@
+{%  extends 'order/newdashboard.html' %}
+{% load static %}
+{% load widget_tweaks %}
+<head>
+	{% block extrahead %}
+	<link rel="stylesheet" href="{% static 'css/createneworder.css' %}">
+	{% endblock %}
+</head>
+{% block content %}
+<div id="newheader" class="card-head style-primary">
+	<header>Add Order</header>
+</div>
+<div class="container">
+	<form action="" method="POST">
+	{% csrf_token %}
+	<div class="row100">
+	  <div class="col">
+		<div class="inputBox">
+			<input type="text" name="customer_name" required="required">
+		  <span class="text">First Name</span>
+		  <span class="line"></span>
+		</div>
+	  </div>
+	  <div class="col">
+		<div class="inputBox">
+		  <input type="text" name="product_name" required="required">
+		  <span class="text">Product Name</span>
+		  <span class="line"></span>
+		</div>
+	  </div>
+	</div>
+	<div class="row100">
+	  <div class="col">
+		<div class="inputBox">
+			<input type="text" name="address" required="required">
+		  <span class="text">Address</span>
+		  <span class="line"></span>
+		</div>
+	  </div>
+	  <div class="col">
+		<div class="inputBox">
+			<input type="" name="status" required="required">
+		  <span class="text">Status</span>
+		  <span class="line"></span>
+		</div>
+	  </div>
+	</div>
+	<div class="row100">
+	  <div class="col">
+		  <!--
+		<div class="inputBox textarea">
+		  <textarea required="required"></textarea>
+		  <span class="text">Type your message Here...</span>
+		  <span class="line"></span>
+		</div>
+		-->
+	  </div>
+	</div>
+	
+	<div class="row100">
+	  <div class="col">
+		<input type="submit" value="Send">
+	  </div>
+	</div>
+	</form>
+  </div>
+{% endblock %}

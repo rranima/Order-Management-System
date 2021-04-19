@@ -1,0 +1,79 @@
+{%  extends 'order/newdashboard.html' %}
+{% load static %}
+<head>
+	{% block extrahead %}
+	<link rel="stylesheet" href="{% static 'css/tablestyle.css' %}">
+	<link rel="stylesheet" href="{% static 'css/find.css' %}">
+	{% endblock %}
+</head>
+{% block content %}
+<!--
+<div class="row">
+	<div class="col">
+		<div class="card card-body">
+
+			<form method="get" action="">
+				{{myFilter.form}}
+
+		    <button class="btn btn-primary" type="submit">Search</button>
+		  </form>
+
+		</div>
+	</div>
+</div> --> 
+<div id="newheader" class="card-head style-primary">
+    All Orders
+      <form action="" method="GET">
+        <input type="text"  name="q" ><button type="submit">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+	  </form>
+</div>
+<br>
+<div id="viewtable">
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Phone Number</th>
+			<th>Address</th>
+			<th>Product</th>
+			<th>Date Ordered</th>
+			<th>Amount</th>
+			<th>Status</th>
+			<th>Payment</th>
+			<th>Update</th>
+			<th>Remove</th>
+		</tr>
+
+		{% for order in orders %}
+			<tr>
+				<td>{{order.customer_name}}</td>
+				<td>{{order.phone}}</td>
+				<td>{{order.address}}</td>
+				<td>{{order.product_name}}</td>				
+				<td>{{order.date_created}}</td>
+				{% for item in products %}
+					{% if order.product_name == item %}
+						<td>{{item.price}}</td>	
+					{% endif %}
+				{% endfor %}		
+				<td>{{order.status}}</td>
+				<td>{{order.payment_option}}</td>
+				<td><a class="btn btn-sm btn-info" href="{% url 'updateOrder' order.id %}">Update</a></td>
+				<td><a class="btn btn-sm btn-danger" href="{% url 'deleteOrder' order.id %}">Delete</a></td>
+
+			</tr>
+		{% endfor %}
+
+	</table>
+</div>
+
+
+{% endblock %}
+
+<!--
+{% for item in products %}
+{% if order.product_name == item.name %}
+{% endif %}
+				{% endfor %}
+				-->

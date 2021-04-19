@@ -1,0 +1,42 @@
+{%  extends 'order/main.html' %}
+{% load static %}
+
+<head>
+	<link rel="stylesheet" href="{% static 'css/tablestyle.css' %}">
+</head>
+<body>
+	{% block content %}
+	<h5>ORDERS</h5>
+	<hr>
+	<div class="card card-body"> 
+		<div class="filter"></div>	
+		<table>
+			<tr>
+				<th>Name</th>
+				<th>Phone Number</th>
+				<th>Product</th>
+				<th>Date Orderd</th>
+				<th>Amount</th>
+				<th>Status</th>
+				<th>Update</th>
+				<th>Remove</th>
+			</tr>
+
+			{% for order in orders %}
+				<tr>
+					<td>{{customer.name}}</td>
+					<td>{{customer.phone}}</td>
+					<td>{{order.product}}</td>
+					<td>{{order.date_created}}</td>
+					<td>{{product.price}}</td>				
+					<td>{{order.status}}</td>
+					<td><a class="btn btn-sm btn-info" href="{% url 'updateOrder' order.id %}">Update</a></td>
+					<td><a class="btn btn-sm btn-danger" href="{% url 'deleteOrder' order.id %}">Delete</a></td>
+
+				</tr>
+			{% endfor %}
+	
+		</table>
+	</div>
+{% endblock %}
+</body>

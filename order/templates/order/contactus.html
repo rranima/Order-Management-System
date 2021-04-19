@@ -1,0 +1,56 @@
+{%  extends 'order/newdashboard.html' %}
+{% load static %}
+
+<head>
+	{% block extrahead %}
+	<link rel="stylesheet" href="{% static 'css/contactus.css' %}">
+	{% endblock %}
+</head>
+{% block content %}
+<section>
+	<div class="container">
+	
+		<form action="" method="POST">
+
+		  <div class="form-row">
+			<div class="input-data">
+				{{form.customer_name}}
+				<div class="underline"></div>
+  				<label for="">Cust Name</label>
+			</div>
+  			<div class="input-data">
+				{{form.product_name}}
+				<div class="underline"></div>
+  				<label for="">Last Name</label>
+			</div>
+  		</div>
+		  <div class="form-row">
+			<div class="input-data">
+				{{form.phone}}
+				<div class="underline"></div>
+  				<label for="">Cust Name</label>
+			</div>
+  			<div class="input-data">
+				{{form.address}}
+				<div class="underline"></div>
+  				<label for="">Last Name</label>
+			</div>
+  		</div>
+  		<div class="form-row">
+			<div class="input-data ">
+  			  {{form.payment_option}} 
+			  <br />
+  			<div class="underline"></div>
+  			<label for="">Write your message</label>
+		<br />
+  <div class="form-row submit-btn">
+			<div class="input-data">
+			  <div class="inner"></div>
+			  <input type="submit" value="submit">
+			</div>
+		  </div>
+		</form>
+	  </div>
+  
+</section>
+{% endblock %}

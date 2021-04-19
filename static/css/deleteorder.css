@@ -1,0 +1,7 @@
+tr td:first-child{
+	padding-right: 20px;
+	font-weight: bold;
+}
+tr td{
+	padding-top: 15px;
+}

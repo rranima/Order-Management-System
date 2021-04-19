@@ -1,0 +1,35 @@
+{%  extends 'order/newdashboard.html' %}
+{% load static %}
+
+<head>
+	{% block extrahead %}
+	<link rel="stylesheet" href="{% static 'css/vvvvv.css' %}">
+	{% endblock %}
+</head>
+{% block content %}
+<div class="orderform">
+	<form>
+		<div class="input-row">
+			<div class="input-group">
+				<label>CN</label>
+				{{form.customer_name}}
+			</div>
+			<div class="input-group">
+				<label>P</label>
+				{{form.phone}}
+			</div>
+		</div>
+		<div class="input-row">
+			<div class="input-group">
+				<label>PN</label>
+				{{form.product_name}}
+			</div>
+			<div class="input-group">
+				<label>Address</label>
+				{{form.address}}
+			</div>
+		</div>
+		<button type="submit">submit</button>
+	</form>
+</div>
+{% endblock %}

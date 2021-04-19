@@ -1,0 +1,43 @@
+#newheader
+{
+	width: 100%;
+	background-color: #009999;
+	color: #fff;
+	border-style: solid;
+	border-color: #009999;
+	font-size:24px;
+	font-weight:500;
+	padding: 8px 20px;
+	font-family: 'Poppins' ,sans-serif;
+}
+.form-container{
+	margin: 10px 20px;
+}
+.form-group.col-md-6 input{
+	
+	border: none;
+	border-bottom: 1px solid #ccc;
+	outline: none;
+	padding-bottom: 5px;
+}
+label{
+	margin-bottom: 6px;
+	display: block;
+	color: #424242 ;
+	font-weight: 450;
+}
+.form-check-inline{
+	margin: 0 5px;
+}
+button{
+	font-family: 'Muli', sans-serif;
+	transition: 0.2s ease-out;
+	background-color: #009999;
+	border-radius: 10px;
+  	border: none;
+  	color: #fff;
+	font-size: 20px;
+	padding: 5px 10px;
+	align-items: center;
+	  
+}

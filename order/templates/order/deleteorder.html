@@ -1,0 +1,57 @@
+{%  extends 'order/newdashboard.html' %}
+{% load static %}
+<head>
+	{% block extrahead %}
+	<link rel="stylesheet" href="{% static 'css/deleteorder.css' %}">
+	{% endblock %}
+</head>
+{% block content %}
+
+<div class="row">
+	<div class="col-md-6">
+		<div class="card-body">
+
+
+			<p>Are you sure you want to delete {{item.customer_name}}'s order?</p>
+
+			<table>
+				<tr>
+					<td>Customer Name</td>
+					<td>{{item.customer_name}}</td>
+				</tr>
+				<tr>
+					<td>Phone</td>
+					<td>{{item.phone}}</td>
+				</tr>
+				<tr>
+					<td>Product Name</td>
+					<td>{{item.product_name}}</td>
+				</tr>
+				<tr>
+					<td>Status</td>
+					<td>{{item.status}}</td>
+				</tr>
+			</table>
+			<!--		
+			<strong>Customer Name : </strong>{{item.customer_name}}<br/>
+			<strong>Phone : </strong>{{item.phone}}<br/>
+			<strong>Address : </strong>{{item.address}}<br/>
+			<strong>Product Name : </strong>{{item.product_name}}<br/>
+			<strong>Status : </strong>{{item.status}}<br/>
+			-->
+
+			<br/>
+			<form action="{% url 'deleteOrder' item.id  %}" method="POST">
+				
+				{% csrf_token %}
+				<input class="btn btn-danger" type="submit" value ="Delete">
+				<a class="btn btn-info" href="{% url 'home' %}">Cancel</a>
+
+				
+			</form>
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}

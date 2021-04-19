@@ -1,0 +1,63 @@
+{%  extends 'order/newdashboard.html' %}
+{% load static %}
+{% load widget_tweaks %}
+<head>
+	{% block extrahead %}
+	<link rel="stylesheet" href="{% static 'css/formstyle.css' %}">
+	{% endblock %}
+</head>
+{% block content %}
+<div id="newheader" class="card-head style-primary">
+	<header>Add Order</header>
+</div>
+<section>
+	<div  class="container">
+		
+		<div class="orderform">
+	 		<div class="formBox">
+				<form action="" method="POST">
+				{% csrf_token %}
+					<div class="inputBox w50">
+						{% render_field form.customer_name  class="form-control" %}
+						<span> Customer Name</span>
+					</div>
+					<div class="inputBox w50">
+						{% render_field form.address  class="form-control" %}
+						<span> Address</span>
+					</div>
+					<div class="inputBox w50">
+						{% render_field form.phone  class="form-control" %}
+						<span> Phone Number</span>
+					</div>
+					<div class="inputBox w50">
+						{% render_field form.product  class="form-control" %}
+						<span> Product</span>
+						
+					</div>
+					<div class="inputBox w50">
+						{% render_field form.date_created  class="form-control" %}
+						<span> Date Created</span>
+						
+					</div>
+					<div class="inputBox w50">
+						<input type="text" name="" required>
+						<span> Payment Options</span>
+						{{form.payment_option}}
+					</div>
+					<div class="inputBox w50">
+						<input type="radio" name="" required>
+						<span> Status</span>
+						{{form.status}}
+					</div>
+
+					<div class="inputBox w50">
+						<input type="submit" value="Submit">
+					</div>
+				</form>	
+
+			 </div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}

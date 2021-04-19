@@ -1,0 +1,31 @@
+{%  extends 'order/newdashboard.html' %}
+{% load static %}
+<head>
+	{% block extrahead %}
+	<link rel="stylesheet" href="{% static 'css/products.css' %}">
+	{% endblock %}
+</head>
+
+{% block content %}
+	
+		<table class="table">
+			
+				<tr>
+					<th scope="col">Product</th>
+					<th scope="col">Price</th>
+					<th scope="col">Description</th>
+				</tr>
+			
+			<tbody>
+				{% for i in products %}
+				<tr>		
+					<td>{{i.name}}</td>
+					<td>{{i.price}}</td>
+					<td>{{i.description}}</td>
+				</tr>
+				{% endfor %}
+  			</tbody>
+		</table>
+
+
+{% endblock %}

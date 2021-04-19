@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Roboto');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+/**{
+ margin:0;
+ padding: 0;
+ outline: 0;
+}
+#viewtable .filter{
+ position: absolute;
+ left: 0;
+ top: 0;
+ bottom: 0;
+ right: 0;
+ z-index: 1;
+}*/
+#viewtable table{
+/*position: absolute;
+ z-index: 2;
+ left: 50%;
+ top: 50%;
+ transform: translate(-50%,-50%);
+ */
+
+ width: 100%; 
+ border-collapse: collapse;
+ border-spacing: 0;
+/* box-shadow: 0 2px 15px rgba(64,64,64,.7);
+ border-radius: 12px 12px 0 0;
+*/ overflow: hidden;
+}
+#viewtable td , th{
+ padding: 8px 12px;
+ text-align: center;
+ font-size: 18px;
+ 
+}
+#viewtable th{
+ /*background-color: 	#696969;
+ color:#fafafa;
+ border-bottom: 2px solid #696969; 
+ font-family: 'Open Sans',Sans-serif;*/
+ font-weight: 500;
+ font-family: 'Poppins', sans-serif;
+ text-transform: uppercase;
+ 
+
+}
+#viewtable tr{
+ width: 100%;
+ background-color: #fafafa;
+ font-family: 'Montserrat', sans-serif;
+}
+#viewtable tr:nth-child(even){
+ background-color: #ECF0F1;
+}
+.wrapper .main-container{
+	display: table;
+}
+
+@media screen and (max-width:700px) {
+	table{
+		display: table;
+		width: 90%;
+	}
+ 	th, td, tr { 
+		display: block; 
+
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	tr th { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr { border: 1px solid #ccc; }
+	
+	
+	td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	
+		
+	}
+	#viewtable td::before{
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 8px;
+		left: 4px;
+		width: 45%; 
+		padding-right: 100%;
+		
+		white-space: nowrap;
+	}
+	
+	
+	td:nth-of-type(1):before { content: " Name"; }
+	td:nth-of-type(2):before { content: " Phone"; }
+	td:nth-of-type(3):before { content: " Address"; }
+	td:nth-of-type(4):before { content: " Product"; }
+	td:nth-of-type(5):before { content: " Date"; }
+	td:nth-of-type(6):before { content: " Amount"; }
+	td:nth-of-type(7):before { content: " Status"; }
+	td:nth-of-type(8):before { content: " Payment"; }
+	td:nth-of-type(9):before { content: " Update"; }
+	td:nth-of-type(10):before { content: " Delete"; }
+
+}

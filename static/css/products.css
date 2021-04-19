@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+.wrapper .main-container .card{
+	background: #cccccc;
+	border: none;
+}
+.table{
+	font-family: 'Poppins', sans-serif;
+	width: 80%;
+}
+th{
+	background-color: #009999;
+	color: white;
+	font-weight: 500;
+	padding: 0;
+}
+
+td{
+	background-color: #fff;
+	font-family: 'Montserrat', sans-serif;
+}
+.wrapper .main-container{
+	display: table;
+}
+@media screen and (max-width:700px) {
+	table.table{
+		width: 100%;
+		display: table;
+	}
+}

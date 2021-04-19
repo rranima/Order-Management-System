@@ -1,0 +1,65 @@
+{%  extends 'order/newdashboard.html' %}
+{% load static %}
+<head>
+	{% block extrahead %}
+	<link rel="stylesheet" href="{% static 'css/neworderheader.css' %}">
+	{% endblock %}
+</head>
+{% block content %}
+<div id="newheader" class="card-head style-primary">
+	<header>Add Order</header>
+</div>
+<div class="form-container">
+<form action="" method="POST">
+	{% csrf_token %}
+	<div class="form-row">
+		<div class="form-group col-md-6">
+		  <label >Customer Name</label>
+		  {{form.customer_name}}
+		</div>
+		<div class="form-group col-md-6">
+		  <label >Product</label>
+		  {{form.product_name}}
+		</div>
+	</div>
+	<div class="form-row">
+		<div class="form-group col-md-6">
+		  <label >Phone Number</label>
+		  
+		  {{form.phone}}
+		</div>
+		<div class="form-group col-md-6">
+			
+				<label >Status</label>
+				{{form.status}}
+			
+		</div>
+	</div>
+	<div class="form-row">
+		<div class="form-group col-md-6">
+		  <label >Address</label>
+		  
+		  {{form.address}}
+		</div>
+	</div>
+	
+	<div class="form-check form-check-inline">
+			<label >Payment Options</label>
+			{{form.payment_option}}
+		
+	</div>
+	<br>
+	<br>
+	<button type="submit" >Submit</button>
+  </form>
+</div>						
+{% endblock %}
+
+<!--
+<form action="" method="POST">
+			{% csrf_token %}
+			{{form.as_p}}
+			<input type="submit" name="Submit">
+		</form>
+
+-->
